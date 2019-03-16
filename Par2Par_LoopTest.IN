@@ -1,0 +1,89 @@
+* parameter data
+91EW1_1 = -1.0 * 150.0000000
+91EW2_1 = -1.0 * 300.0000000
+91EW3_1 = -1.0 * 165.0000000
+91EW4_1 = -1.0 * 70.00000000
+91EW5_1 = -1.0 * 210.0000000
+91EW6_1 = -1.0 * 350.0000000
+91EW7_1 = -1.0 * 350.0000000
+91EW8_1 = -1.0 * 294.0000000
+
+nums = list()
+
+for i in range(7):
+	91EW1_1 += 1.0
+	if not (i % 2):
+		print("loop test " + str(i))
+	nums.append(i)
+
+print(nums)
+
+import os
+
+def geomean(numbers):
+    import math
+    logsum = 0.0
+    for n in numbers:
+        logsum += math.log(n)
+    return math.exp(logsum / len(numbers))
+
+# This geomean can fail with small or large numbers (over/underflow). It has the advantage of not using an import statement.
+#def geomean(x):
+#	product = 1 
+#	for n in x: 
+#	    product *= n 
+#	return product ** (1.0/len(x))
+
+print(geomean(nums[1:]))
+
+91EW6A_1 = 91EW6_1 * 0.60
+91EW6B_1 = 91EW6_1 * 0.40
+91EW6B_1 = 91EW6B_1 + geomean(nums[1:])
+ 
+91EW7A_1 = 91EW7_1 * 0.28
+91EW7B_1 = 91EW7_1 * 0.26
+91EW7C_1 = 91EW7_1 * 0.12
+91EW7D_1 = 91EW7_1 * 0.14
+91EW7E_1 = 91EW7_1 * 0.20
+ 
+91EW8A_1 = 91EW8_1 * 0.16
+91EW8B_1 = 91EW8_1 * 0.17
+91EW8C_1 = 91EW8_1 * 0.26
+91EW8D_1 = 91EW8_1 * 0.18
+91EW8E_1 = 91EW8_1 * 0.23
+ 
+HAT_Tot_1 = 300.0000000 + 350.0000000 + 350.0000000 + 294.0000000
+HWAT_1 = (0.153 + 0.161 + 0.157) * (300.0000000 + 350.0000000 + 350.0000000 + 294.0000000)
+HWAT_2 = (0.131 + 0.135 + 0.139 + 0.124) * (300.0000000 + 350.0000000 + 350.0000000 + 294.0000000)
+HAT1_1 = HAT_Tot_1 * 0.153 / 9.0
+HAT2_1 = HAT_Tot_1 * 0.161 / 9.0
+HAT3_1 = HAT_Tot_1 * 0.157 / 10.0
+HAT4_1 = HAT_Tot_1 * 0.131 / 10.0
+HAT5_1 = HAT_Tot_1 * 0.135 / 9.0
+HAT6_1 = HAT_Tot_1 * 0.139 / 9.0
+HAT7_1 = HAT_Tot_1 * 0.124 / 5.0
+ 
+Irr_VA_1 = 135.0
+ 
+DY1IW_1 = 150.0000000 + 165.0000000 + 70.00000000 + 210.0000000 - Irr_VA_1
+DY1IWA_1 = DY1IW_1 * 0.84
+DY1IWB_1 = DY1IW_1 * 0.11
+DY1IWC_1 = DY1IW_1 * 0.05
+ 
+DY1IG_1_Tot = 0.0
+DY1IG_1 = DY1IG_1_Tot / 49.0
+ 
+DY1IT1_1_Tot = 0.0
+DY1IT1_1 = DY1IT1_1_Tot / 9.0
+ 
+DY1IT2_1_Tot = 0.0
+DY1IT2_1 = DY1IT2_1_Tot / 3.0
+ 
+DY1IT3_1_Tot = 0.0
+DY1IT3_1 = DY1IT3_1_Tot / 6.0
+ 
+* template and model input files
+Base_SP1_SWI.TPL Base_SP1.SWI
+PumpingRates_SP1_DAT.tpl PumpingRates_SP1.DAT
+* control data
+single point
